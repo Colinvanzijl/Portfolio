@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Gamble</title>
+		<link rel="Stylesheet" type="text/css" href="Stylesheet.css">
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="overlay" >
+			<div id="overlaycontent">
+				<center>
+					<div id="Form">					
+						<p>Player 1<br>
+						<input type="text" id="player1" placeholder="Player 1"></p>
+						<p>Player 2<br>
+						<input type="text" id="player2" placeholder="Player 2"></p>
+						<p>Player 3<br>
+						<input type="text" id="player3" placeholder="Player 3"></p>
+						<p>Player 4<br>
+						<input type="text" id="player4" placeholder="Player 4"></p>
+						<p>Player 5<br>
+						<input type="text" id="player5" placeholder="Player 5"></p>
+						<p>Player 6<br>
+						<input type="text" id="player6" placeholder="Player 6"></p>
+						<button onclick="off()">Submit</button>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div id="Racecourse">
+			<div id="Road1"><div id="Image1" class="Image"></div></div>
+			<div id="Road2"><div id="Image2" class="Image"></div></div>
+			<div id="Road3"><div id="Image3" class="Image"></div></div>
+			<div id="Road4"><div id="Image4" class="Image"></div></div>
+			<div id="Road5"><div id="Image5" class="Image"></div></div>
+			<div id="Road6"><div id="Image6" class="Image"></div></div>
+		</div>
+		<div id="startgame"><center>Start Game</center></div>
+	</body>
+	<script>
+		//Array holding all information
+
+
+		//Overlay
+		$(function(){		
+			function on() {
+				document.getElementById("overlay").style.display = "block";
+			}
+			on();
+		});	
+
+		function off() {
+			document.getElementById("overlay").style.display = "none";
+		}
+
+		$(function(){
+			var randomspeed = [];
+			var number = 0;
+
+ 			function generate() {
+  				$('#number').text(Math.floor(Math.random() * 6) + 1);
+ 			};
+
+		//Randomspeeds
+		function Random(){
+       
+      		while(randomspeed.length < 6) {
+
+      		var random = Math.floor(Math.random() * 2000) + 500;
+
+       		if(randomspeed.indexOf(random) > -1 ) {
+       			continue
+      	 	}
+
+       else {
+       		randomspeed.push(random);
+       }
+			}       
+       }
+
+       	//Startgame
+		function startgame(){
+
+			for (var i=0; i < 7; i++) {
+
+			$("#Image" + i).animate({"left": "84%"}, randomspeed[i], "linear");
+			}
+		}
+			$("#startgame").click(function() {
+				Random();
+				startgame();
+			});	
+		});
+	</script>
+</html>
