@@ -1,0 +1,36 @@
+body {
+	background-image: url("http://prod.static.broncos.clubs.nfl.com/nfl-assets/img/gbl-ico-team/DEN/logos/home/large.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: Calibri;
+	color: #002244;
+	/*cursor: url(Monstercat.jpg), auto;*/
+
+}
+
+p {
+	background-color: white;
+	border: 1px solid black;
+	opacity: 0.8;
+	height: auto;
+	width: 700px;
+	left: 600px;
+	font-size: 20px;
+	position: absolute;
+}
+
+b.Hurricanes {
+	color: #0E0EF0;
+}
+
+b {
+	color: #FB4F14;
+}
+
+i {
+	color: #002244;
+}
+
+a, a:visited {
+	color: inherit;
+}
